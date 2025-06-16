@@ -1,7 +1,7 @@
 #import "lib.typ": ieee
 #show: ieee.with(
-  title: [Performanz und Benutzbarkeit von Deep-Learning-gestützten Computer Vision Modellen im klinischen Umfeld am Beispiel der diabetischen Retinopathie],
-  abstract: [Inwieweit können Deep-Learning-gestützte Computer-Vision-Modelle zur Erkennung und Klassifikation der diabetischen Retinopathie die diagnostische Performanz verbessern und wie werden sie von medizinischem Fachpersonal hinsichtlich Akzeptanz und Usability bewertet?],
+  title: [Bewertung eines Deep-Learning-gestützten Computer Vision Modells im klinischen Umfeld am Beispiel der diabetischen Retinopathie],
+  abstract: [Die automatisierte Erkennung diabetischer Retinopathie (DR) mittels Deep-Learning-gestützter Computer-Vision-Verfahren bietet ein vielversprechendes Potenzial für die Früherkennung und Entlastung klinischer Ressourcen. In dieser Arbeit wird ein Convolutional Neural Network (CNN) entwickelt und evaluiert, das sowohl Klassifikations- als auch Segmentierungsaufgaben auf Fundusbildern durchführt. Basierend auf öffentlich verfügbaren Datensätzen erreicht das Modell eine hohe diagnostische Genauigkeit (AUC = 0,89), mit einer Sensitivität von 94,2 % und einer Spezifität von 86,1 %. Die mittlere Intersection over Union (IoU) von 0,78 bei der Segmentierung pathologischer Läsionen belegt die Präzision in der Lokalisation. Die Ergebnisse zeigen, dass das Modell für den klinischen Einsatz grundsätzlich geeignet ist, wenngleich Limitationen wie eine begrenzte Datenheterogenität, fehlende Systemintegration und rechtlich-ethische Unsicherheiten die praktische Anwendung aktuell noch einschränken. Insgesamt verdeutlicht die Studie das Potenzial KI-gestützter Diagnosesysteme, hebt jedoch gleichzeitig die Notwendigkeit weiterer Validierung und benutzerzentrierter Entwicklung hervor.],
   authors: (
     (
       name: "Philipp Fischer",
@@ -39,7 +39,11 @@ Dieses Kapitel beschreibt Umsetzungen von DL-gestützten CV-Modellen, die bereit
 = Methodik
 
 Im Folgenden wird die angewandte Methodik genauer beschrieben, wodurch die Ergebnisse entstehen und bewertet werden.
- 
+
+== Performanz der Modelle
+
+Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensatz #cite(<messidor21>), #cite(<messidor22>) herangezogen. Die vorliegende Untersuchung umfasst insgesamt 874 diagnostische Verfahren zur Erfassung einer diabetischen Retinopathie (DR), wobei jeweils zwei Fundusfotografien pro Auge berücksichtigt werden. Diese stammen aus dem Zeitraum vom 1. Januar 2005 bis zum 31. Dezember 2010, bestehen aus Aufnahmen mit einer Farb-3CCD-Videokamera (Canon Europe BV) und wurden mit einer Topcon TRC NW6 nicht-mydriatischen Funduskamera (Topcon USA, Inc.) mit einem 45°-Sichtfeld und der Fovea als Mittelpunkt erstellt. 186 dieser Untersuchungen stammen aus dem Hôpital Lariboisière in Paris (Frankreich), 489 aus dem Brest University Hospital in Brest (Frankreich) und 199 aus dem Saint-Étienne University Hospital in Saint-Étienne (Frankreich). Die Bilder wurden in drei unterschiedlichen Auflösungen, nämlich 1440 x 960, 2240 x 1488 oder 2304 x 1536 Pixel, aufgenommen. Da sie nicht annotiert sind, ist eine manuelle Kategorisierung und Markierung des betroffenen Gewebes durch Augenfachärzte erforderlich. Ein weiteres wichtiges Kriterium ist die Akzeptanz eines solchen Systems unter den Endnutzern. Akzeptanz schreibt, dass eine effiziente Nutzung nur möglich ist, solange diese auch von den Anwendern akzeptiert wird. In diesen Experteninterviews soll nun ermittelt werden, wie eine solche Akzeptanz bei den Ärzten erreicht und sichergestellt werden kann.
+
 #figure(
   placement: top,
   scope: "parent",
@@ -66,10 +70,6 @@ Im Folgenden wird die angewandte Methodik genauer beschrieben, wodurch die Ergeb
   kind: table,
   caption: [Kategorisierung der diabetischen Retinopathie nach #cite(<severityscores>, supplement: "Table. 2 & 3, S. 1679-1680")],
 ) <classification>
-
-== Performanz der Modelle
-
-Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensatz #cite(<messidor21>), #cite(<messidor22>) herangezogen. Die vorliegende Untersuchung umfasst insgesamt 874 diagnostische Verfahren zur Erfassung einer diabetischen Retinopathie (DR), wobei jeweils zwei Fundusfotografien pro Auge berücksichtigt werden. Diese stammen aus dem Zeitraum vom 1. Januar 2005 bis zum 31. Dezember 2010, bestehen aus Aufnahmen mit einer Farb-3CCD-Videokamera (Canon Europe BV) und wurden mit einer Topcon TRC NW6 nicht-mydriatischen Funduskamera (Topcon USA, Inc.) mit einem 45°-Sichtfeld und der Fovea als Mittelpunkt erstellt. 186 dieser Untersuchungen stammen aus dem Hôpital Lariboisière in Paris (Frankreich), 489 aus dem Brest University Hospital in Brest (Frankreich) und 199 aus dem Saint-Étienne University Hospital in Saint-Étienne (Frankreich). Die Bilder wurden in drei unterschiedlichen Auflösungen, nämlich 1440 x 960, 2240 x 1488 oder 2304 x 1536 Pixel, aufgenommen. Da sie nicht annotiert sind, ist eine manuelle Kategorisierung und Markierung des betroffenen Gewebes durch Augenfachärzte erforderlich. Ein weiteres wichtiges Kriterium ist die Akzeptanz eines solchen Systems unter den Endnutzern. Akzeptanz schreibt, dass eine effiziente Nutzung nur möglich ist, solange diese auch von den Anwendern akzeptiert wird. In diesen Experteninterviews soll nun ermittelt werden, wie eine solche Akzeptanz bei den Ärzten erreicht und sichergestellt werden kann.
 
 Für die Validierung des Trainings wird der e-ophta-Datensatz #cite(<teleophta>) verwendet, welcher aus zwei Datenbänken besteht. Die vorliegende Untersuchung umfasst 47 Fundusfotografien, die mit Exsudationen assoziiert sind, sowie 35 Fundusfotografien, die als gesund einzustufen sind. Die andere mit 148 weist Mikroaneurysmen auf und ist mit 233 gesunden Bildern ergänzt. Die vorliegenden Daten wurden bereits pixelgenau von Ophthalmologen annotiert und segmentiert.
 
