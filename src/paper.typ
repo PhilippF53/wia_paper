@@ -54,7 +54,7 @@ Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensa
     table.header([*Schweregradskala*], [*Score*], [*Untersuchungsbefund*]),
     table.hline(stroke: 0.7pt + black),
     table.cell(colspan: 3)[ICDR Schweregrad],
-    [Keine erkännbare Retinopathie],[0],[Keine Auffälligkeiten],
+    [Keine erkennbare Retinopathie],[0],[Keine Auffälligkeiten],
     [Leichte nicht-proliferative diabetische Retinopathie],[1],[Nur Mikroaneurysmen],
     [Mäßige nicht-proliferative diabetische Retinopathie],[2],[Mehr als nur Mikroaneurysmen, aber weniger als schwere nicht-proliferative diabetische Retinopathie],
     [Schwere nicht-proliferative diabetische Retinopathie],[3],
@@ -89,7 +89,7 @@ Die Eignung eines Dialogs für die zu erfüllende Aufgabe stellt ein zentrales K
 
 Ein Dialog gilt als selbsterklärend, wenn sämtliche Interaktionsschritte intuitiv nachvollziehbar sind und im Falle von Eingabefehlern ein unmittelbares, unterstützendes Feedback erfolgt. Zusätzlich ist bei Bedarf eine geeignete Hilfestellung bereitzustellen.
 
-Die Kontrollierbarkeit eines Dialogs ist gegeben, wenn die Nutzebden den Ablauf initiieren sowie dessen Richtung und Geschwindigkeit bis zur Zielerreichung beeinflussen kann.
+Die Kontrollierbarkeit eines Dialogs ist gegeben, wenn die Nutzenden den Ablauf initiieren sowie dessen Richtung und Geschwindigkeit bis zur Zielerreichung beeinflussen kann.
 
 Ein dialogisches System entspricht den Erwartungen der Nutzenden, wenn es konsistent gestaltet ist und deren Vorerfahrungen, Qualifikationen sowie etablierte Nutzungskonventionen berücksichtigt.
 
@@ -119,7 +119,7 @@ Das Modell basiert auf einem Convolutional Neural Network (CNN) unter Verwendung
 
 Zur externen Validierung wird der e-ophta-Datensatz herangezogen, der pixelgenau annotierte Fundusaufnahmen umfasst. Die Bewertung der Modellleistung erfolgt durch den Vergleich der Vorhersagen mit den Ground-Truth-Labels, die von Fachärzten vergeben wurden. Die Leistungsfähigkeit des Modells wird durch die Berechnung von Sensitivität (True Positive Rate), Spezifität (True Negative Rate) sowie der Fläche unter der ROC-Kurve (AUC) beurteilt.
 
-== Expertenintervierws
+== Experteninterviews
 
 Zur Erfassung der Usability und Akzeptanz des entwickelten Systems im klinischen Alltag werden semistrukturierte Experteninterviews mit medizinischem Fachpersonal durchgeführt. Grundlage ist ein Interviewleitfaden@experteninterviews, der sich an den Usability-Kriterien der ISO 9241-10@usability sowie etablierten Technologieakzeptanzmodellen orientiert. Befragt werden Ophthalmolog:innen und Diabetolog:innen mit mehrjähriger klinischer Erfahrung.
 
@@ -133,7 +133,7 @@ Die Studie erfolgt unter Beachtung datenschutzrechtlicher und ethischer Anforder
 
 In diesem Kapitel werden die Ergebnisse der vorher beschriebenen Auswertungen detailiert ausgeführt.
 
-== Quantitative Performanzbewerung
+== Quantitative Performanzbewertung
 
 Die Evaluation des Modells auf dem externen e-ophta-Datensatz ergab eine moderate diagnostische Leistung. Insbesondere zeigte sich ein Ungleichgewicht zwischen Sensitivität und Spezifität. Bei einem auf maximale Sensitivität optimierten Schwellenwert erzielte das Modell folgende Werte:
 
@@ -149,7 +149,7 @@ Trotz der hohen Sensitivität wurden folgende Einschränkungen beobachtet: Fehlk
 
 Diese Limitierungen wirken sich unmittelbar auf die Interaktion mit medizinischem Fachpersonal aus, da fehlende Transparenz und erklärbare Entscheidungslogik das Vertrauen in das System reduzieren.
 
-== Qualitative Expertenintervierws
+== Qualitative Experteninterviews
 
 Insgesamt wurden zehn Interviews mit Fachärzt:innen (Ophthalmologie und Diabetologie) durchgeführt. Die qualitative Inhaltsanalyse offenbarte mehrheitlich verhaltene Einschätzungen bezüglich der Usability und insbesondere der Akzeptanz des Systems im klinischen Alltag.
 
