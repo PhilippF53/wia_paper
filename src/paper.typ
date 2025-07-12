@@ -71,7 +71,7 @@ Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensa
   caption: [Kategorisierung der diabetischen Retinopathie nach #cite(<severityscores>, supplement: "Table. 2 & 3, S. 1679-1680")],
 ) <classification>
 
-Für die Validierung des Trainings wird der e-ophta-Datensatz #cite(<teleophta>) verwendet, welcher aus zwei Datenbänken besteht. Die vorliegende Untersuchung umfasst 47 Fundusfotografien, die mit Exsudationen assoziiert sind, sowie 35 Fundusfotografien, die als gesund einzustufen sind. Die andere mit 148 weist Mikroaneurysmen auf und ist mit 233 gesunden Bildern ergänzt. Die vorliegenden Daten wurden bereits pixelgenau von Ophthalmologen annotiert und segmentiert.
+Für die Validierung des Trainings wird der e-ophta-Datensatz #cite(<teleophta>) verwendet, welcher aus zwei Datenbanken besteht. Die vorliegende Untersuchung umfasst 47 Fundusfotografien, die mit Exsudationen assoziiert sind, sowie 35 Fundusfotografien, die als gesund einzustufen sind. Die andere mit 148 weist Mikroaneurysmen auf und ist mit 233 gesunden Bildern ergänzt. Die vorliegenden Daten wurden bereits pixelgenau von Ophthalmologen annotiert und segmentiert.
 
 Für die Klassifizierung des Status der DR wurde die Einstufung des International Clinical Diabetic Retinopathy (ICDR) Severity Scale (siehe #ref(<classification>)) übernommen. Dabei wird auch das Vorkommen eines diabetischen Makulaödem betrachtet, welches eine häufige Folgeerscheinung von proliferativen Retinopathie ist. 
 
