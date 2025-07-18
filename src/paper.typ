@@ -89,7 +89,7 @@ Die Eignung eines Dialogs für die zu erfüllende Aufgabe stellt ein zentrales K
 
 Ein Dialog gilt als selbsterklärend, wenn sämtliche Interaktionsschritte intuitiv nachvollziehbar sind und im Falle von Eingabefehlern ein unmittelbares, unterstützendes Feedback erfolgt. Zusätzlich ist bei Bedarf eine geeignete Hilfestellung bereitzustellen.
 
-Die Kontrollierbarkeit eines Dialogs ist gegeben, wenn die Nutzenden den Ablauf initiieren sowie dessen Richtung und Geschwindigkeit bis zur Zielerreichung beeinflussen kann.
+Die Kontrollierbarkeit eines Dialogs ist gegeben, wenn die Nutzenden den Ablauf initiieren sowie dessen Richtung und Geschwindigkeit bis zur Zielerreichung beeinflussen können.
 
 Ein dialogisches System entspricht den Erwartungen der Nutzenden, wenn es konsistent gestaltet ist und deren Vorerfahrungen, Qualifikationen sowie etablierte Nutzungskonventionen berücksichtigt.
 
@@ -103,7 +103,7 @@ Im Rahmen des Experteninterviews wurde schließlich eine Abfrage der zuvor ident
 
 === Akzeptanz
 
-Ein weiterer wesentlicher Aspekt, der in der vorliegenden Untersuchung berücksichtigt werden muss, ist die Akzeptanz eines solchen Systems unter den Endnutzern. Gemäß #cite(<akzeptanz>, form: "author")@akzeptanz ist eine effiziente Nutzung dieser nur unter der Prämisse möglich, dass diese auch von den Anwendern akzeptiert wird. Im Rahmen der vorliegenden Experteninterviews wird der Fokus darauf gelegt, die Möglichkeiten zur Erreichung einer solchen Akzeptanz bei den Ärzten zu erörtern und entsprechende Sicherungsmaßnahmen zu erarbeiten.
+Ein weiterer wesentlicher Aspekt, der in der vorliegenden Untersuchung berücksichtigt werden muss, ist die Akzeptanz eines solchen Systems unter den Endnutzern. Gemäß #cite(<akzeptanz>, form: "author")@akzeptanz ist eine effiziente Nutzung dieses nur unter der Prämisse möglich, dass diese auch von den Anwendern akzeptiert wird. Im Rahmen der vorliegenden Experteninterviews wird der Fokus darauf gelegt, die Möglichkeiten zur Erreichung einer solchen Akzeptanz bei den Ärzten zu erörtern und entsprechende Sicherungsmaßnahmen zu erarbeiten.
 
 = Durchführung
 
@@ -114,6 +114,7 @@ Die Studie erfolgt in drei Schritten: (1) Training und Optimierung eines Deep-Le
 Für das Training des Modells wird der Messidor-2-Datensatz verwendet, der 874 Augenuntersuchungen mit jeweils zwei Fundusaufnahmen umfasst. Die Bilder wurden standardisiert in drei französischen Kliniken mit nicht-mydriatischen Funduskameras aufgenommen. Da die Daten nicht annotiert vorliegen, erfolgt eine manuelle Klassifikation durch zwei ophthalmologische Fachärzte gemäß der ICDR-Schweregradskala. Zusätzlich werden pathologische Bildmerkmale (z.B. Exsudate, Mikroaneurysmen) segmentiert.
 
 Das Modell basiert auf einem Convolutional Neural Network (CNN) unter Verwendung der Inception-V3-Architektur@szegedyRethinkingInceptionArchitecture2015. Das Inception-Modell erweitert klassische CNN-Architekturen durch eine modulare Struktur mit Fokus auf Effizienz und Repräsentationsfähigkeit. Zentrale Bausteine sind Inception-Module, die mehrere Filter unterschiedlicher Größe parallel ausführen. Dadurch wird eine simultane Erfassung von Merkmalen auf unterschiedlichen Skalen ermöglicht, ohne die Modellkomplexität stark zu erhöhen#cite(<szegedyRethinkingInceptionArchitecture2015>, supplement: "S. 2").
+
 Die Bilddaten werden im Vorfeld normalisiert und in Trainings- und Validierungsmengen aufgeteilt. Das Training erfolgt mittels überwachten Lernens. Optimierungsmaßnahmen wie Early Stopping, Dropout und Regularisierung werden eingesetzt, um Overfitting zu vermeiden. Ziel ist die Klassifikation des Schweregrades der diabetischen Retinopathie sowie die Detektion eines möglichen Makulaödems.
 
 == Performanzbewertung
@@ -122,7 +123,7 @@ Zur externen Validierung wird der e-ophta-Datensatz herangezogen, der pixelgenau
 
 == Experteninterviews
 
-Zur Erfassung der Usability und Akzeptanz des entwickelten Systems im klinischen Alltag werden semistrukturierte Experteninterviews mit medizinischem Fachpersonal durchgeführt. Grundlage ist ein Interviewleitfaden@experteninterviews, der sich an den Usability-Kriterien der ISO 9241-10@usability sowie etablierten Technologieakzeptanzmodellen orientiert. Befragt werden Ophthalmolog:innen und Diabetolog:innen mit mehrjähriger klinischer Erfahrung.
+Zur Erfassung der Usability und Akzeptanz des entwickelten Systems im klinischen Alltag werden semistrukturierte Experteninterviews mit medizinischem Fachpersonal durchgeführt. Grundlage ist ein Interviewleitfaden@experteninterviews, der sich an den Usability-Kriterien der ISO 9241-10@usability sowie etablierten Technologieakzeptanzmodellen orientiert. Befragt werden Ophthalmologen und Diabetologen mit mehrjähriger klinischer Erfahrung.
 
 Die Interviews werden aufgezeichnet, transkribiert und einer qualitativen Inhaltsanalyse unterzogen. Ziel ist die Erfassung der Nutzungsanforderungen, potenzieller Hemmnisse sowie der allgemeinen Bewertung des Systems aus Sicht der Endanwender. Die Ergebnisse dienen der Evaluation der praktischen Einsatzfähigkeit sowie der Ableitung von Optimierungspotenzialen.
 
@@ -152,7 +153,7 @@ Diese Limitierungen wirken sich unmittelbar auf die Interaktion mit medizinische
 
 == Qualitative Experteninterviews
 
-Insgesamt wurden zehn Interviews mit Fachärzt:innen (Ophthalmologie und Diabetologie) durchgeführt. Die qualitative Inhaltsanalyse offenbarte mehrheitlich verhaltene Einschätzungen bezüglich der Usability und insbesondere der Akzeptanz des Systems im klinischen Alltag.
+Insgesamt wurden zehn Interviews mit Fachärzten (Ophthalmologie und Diabetologie) durchgeführt. Die qualitative Inhaltsanalyse offenbarte mehrheitlich verhaltene Einschätzungen bezüglich der Usability und insbesondere der Akzeptanz des Systems im klinischen Alltag.
 
 === Usability
 
@@ -220,7 +221,7 @@ Optimierung der Schwellenwertanpassung:
 Die Einführung eines dynamisch anpassbaren Schwellenwertsystems, etwa abhängig vom Einsatzkontext (z.B. Screening vs. Diagnostik), könnte das Gleichgewicht zwischen Sensitivität und Spezifität verbessern.
 
 Integration in klinische Systeme:
-Für die praktische Anwendung ist eine direkte Anbindung an Krankenhausinformationssysteme (KIS) und Bildarchivierungs- und Kommunikationssysteme (PACS) essenziell. Eine modulare API-Schnittstelle könnte hier Abhilfe schaffen. Dafür würde auch eine Integration an bereits standardisierte Nachrichtenformate, wie beispielsweise FHIR sinnvoll sein.
+Für die praktische Anwendung ist eine direkte Anbindung an Krankenhausinformationssysteme (KIS) und Bildarchivierungs- und Kommunikationssysteme (PACS) essenziell. Eine modulare Schnittstelle könnte hier Abhilfe schaffen. Dafür würde auch eine Integration an bereits standardisierte Nachrichtenformate, wie beispielsweise FHIR sinnvoll sein.
 
 Rechtliche Rahmenbedingungen klären:
 Es sollten klare Verantwortlichkeitsstrukturen für KI-gestützte Diagnostik etabliert werden. Dies schließt sowohl regulatorische Rahmenbedingungen als auch haftungsrechtliche Aspekte mit ein.
@@ -237,4 +238,4 @@ Zusammenfassend zeigen die Ergebnisse, dass DL-basierte CV-Modelle zur DR-Erkenn
 
 = Anmerkungen
 
-Die Texte wurden mithilfe des KI-Tools DeepL Write (https://www.deepl.com/de/write) umformuliert, dabei wurde keine generativen KI-Modelle genutzt.
+Die Texte wurden mithilfe des KI-Tools DeepL Write (https://www.deepl.com/de/write) umformuliert, dabei wurden keine generativen KI-Modelle genutzt.
