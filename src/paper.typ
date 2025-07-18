@@ -113,7 +113,8 @@ Die Studie erfolgt in drei Schritten: (1) Training und Optimierung eines Deep-Le
 
 Für das Training des Modells wird der Messidor-2-Datensatz verwendet, der 874 Augenuntersuchungen mit jeweils zwei Fundusaufnahmen umfasst. Die Bilder wurden standardisiert in drei französischen Kliniken mit nicht-mydriatischen Funduskameras aufgenommen. Da die Daten nicht annotiert vorliegen, erfolgt eine manuelle Klassifikation durch zwei ophthalmologische Fachärzte gemäß der ICDR-Schweregradskala. Zusätzlich werden pathologische Bildmerkmale (z.B. Exsudate, Mikroaneurysmen) segmentiert.
 
-Das Modell basiert auf einem Convolutional Neural Network (CNN) unter Verwendung der Inception-V3-Architektur@szegedyRethinkingInceptionArchitecture2015. Die Bilddaten werden im Vorfeld normalisiert, augmentiert und in Trainings- und Validierungsmengen aufgeteilt. Das Training erfolgt mittels überwachten Lernens. Optimierungsmaßnahmen wie Early Stopping, Dropout und Regularisierung werden eingesetzt, um Overfitting zu vermeiden. Ziel ist die Klassifikation des Schweregrades der diabetischen Retinopathie sowie die Detektion eines möglichen Makulaödems.
+Das Modell basiert auf einem Convolutional Neural Network (CNN) unter Verwendung der Inception-V3-Architektur@szegedyRethinkingInceptionArchitecture2015. Das Inception-Modell erweitert klassische CNN-Architekturen durch eine modulare Struktur mit Fokus auf Effizienz und Repräsentationsfähigkeit. Zentrale Bausteine sind Inception-Module, die mehrere Filter unterschiedlicher Größe parallel ausführen. Dadurch wird eine simultane Erfassung von Merkmalen auf unterschiedlichen Skalen ermöglicht, ohne die Modellkomplexität stark zu erhöhen#cite(<szegedyRethinkingInceptionArchitecture2015>, supplement: "S. 2").
+Die Bilddaten werden im Vorfeld normalisiert und in Trainings- und Validierungsmengen aufgeteilt. Das Training erfolgt mittels überwachten Lernens. Optimierungsmaßnahmen wie Early Stopping, Dropout und Regularisierung werden eingesetzt, um Overfitting zu vermeiden. Ziel ist die Klassifikation des Schweregrades der diabetischen Retinopathie sowie die Detektion eines möglichen Makulaödems.
 
 == Performanzbewertung
 
@@ -210,7 +211,7 @@ Auch die fehlende Integration in bestehende IT-Systeme (KIS/PACS) reduziert aktu
 == Verbesserungsvorschläge
 
 Black-Box-Problematik umgehen:
-
+Der Ansatz einer erklärbaren KI #cite(<schrillsErklaerbareKI2023>, supplement: "S. 103-4, 106") könnte gewählt werden, um die Entscheidungsprozesse des Modells darzustellen und so zusätzlich die Vertrauenswürdigkeit in ein solches System zu verbessern.
 
 Datengrundlage erweitern:
 Eine Diversifizierung der Trainings- und Testdaten durch Einbezug weiterer, multizentrischer Datensätze könnte die Robustheit und Generalisierbarkeit des Modells verbessern.
