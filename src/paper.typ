@@ -26,7 +26,7 @@ Die Zahl der an Diabetes mellitus erkrankten Menschen nimmt weltweit stetig zu @
 
 In dieser Abhandlung wird eine Erörterung des aktuellen Standes der Technik von Computer-Vision (CV)-Modellen vorgenommen, die unter Zuhilfenahme von Deep Learning (DL)-Methoden trainiert werden. DL beschreibt den Prozess, anhand von Rohdaten eine Funktion zu erlernen @lecunDeepLearning2015a. Der zugrundeliegende Lernprozess folgt in der Regel dem Prinzip des überwachten Lernens (Supervised Learning). Hierbei werden dem Modell Paare aus Eingabedaten und den zugehörigen Zielwerten präsentiert. Das Netzwerk erzeugt auf Basis der Eingabe eine Vorhersage, welche anschließend mit der erwarteten Ausgabe verglichen wird, um den sogenannten Fehler oder Verlust zu berechnen. Zur Optimierung des Netzwerks wird dieser Fehler mithilfe des Backpropagation-Verfahrens durch das Netzwerk zurückgeführt. Dabei wird analysiert, wie stark die einzelnen Parameter, auch als Gewichte bezeichnet, zum Fehler beitragen. Für jedes Gewicht wird ein Gradientenwert bestimmt, der angibt, wie sich der Fehler verändert, wenn das entsprechende Gewicht minimal angepasst wird. Diese Information wird verwendet, um die Gewichte in Richtung einer Fehlerreduktion zu aktualisieren, typischerweise durch Subtraktion des Gradientenwertes multipliziert mit einer Lernrate. Auf diese Weise wird das neuronale Netz schrittweise an die zugrundeliegenden Daten angepasst und lernt, korrekte Vorhersagen zu treffen.
 
-Convolutional Neuronal Networks (CNN) sind für die Klassifizierung, Segmentierung und Objekterkennung von Bildern geeignete Neuronale Netzwerke @IntroductionConvolutionalNeural2015@SurveyConvolutionalNeural2022. Ein zentrales Merkmal ist zudem das sogenannte Weight Sharing, bei dem ein einzelner Satz von Filtergewichten (Convolutional Kernel) auf die gesamte Eingabe angewendet wird. Diese Filter gleiten mittels der Faltung (Convolution) über das Eingabebild und erzeugen sogenannte Feature Maps, die spezifische Merkmale wie Kanten oder Texturen erfassen. Zur Reduktion der dimensionalen Komplexität sowie zur Erhöhung der Invarianz gegenüber Translationen kommt in der Regel eine Pooling-Schicht zum Einsatz, etwa in Form von Max- oder Average-Pooling, wodurch das ursprüngliche Bild auf seine wesentlichen Merkmale reduziert wird um die Anzahl der zu lernenden Parameter weiter zu verringern.  Die finale Klassifizierung erfolgt über sogenannte Fully-Connected-Schichten, die nach demselben Prinzip wie gewöhnliche Artificial Neuronal Networks funktionieren.
+Convolutional Neuronal Networks (CNN) sind für die Klassifizierung, Segmentierung und Objekterkennung von Bildern geeignete Neuronale Netzwerke @IntroductionConvolutionalNeural2015@SurveyConvolutionalNeural2022. Ein zentrales Merkmal ist das sogenannte Weight Sharing, bei dem ein einzelner Satz von Filtergewichten (Convolutional Kernel) auf die gesamte Eingabe angewendet wird. Diese Filter gleiten mittels der Faltung (Convolution) über das Eingabebild und erzeugen sogenannte Feature Maps, die spezifische Merkmale wie Kanten oder Texturen erfassen. Zur Reduktion der dimensionalen Komplexität sowie zur Erhöhung der Invarianz gegenüber Translationen kommt in der Regel eine Pooling-Schicht zum Einsatz, etwa in Form von Max- oder Average-Pooling. Durch dieses wird das ursprüngliche Bild auf seine wesentlichen Merkmale reduziert, um die Anzahl der zu lernenden Parameter weiter zu verringern.  Die finale Klassifizierung erfolgt über sogenannte Fully-Connected-Schichten, die nach demselben Prinzip wie gewöhnliche Artificial Neuronal Networks funktionieren.
 
 = Übersicht Computer Vision Modelle
 
@@ -34,7 +34,7 @@ Dieses Kapitel beschreibt Umsetzungen von DL-gestützten CV-Modellen, die bereit
 
 #cite(<gulshanDevelopmentValidationDeep2016a>, form: "author")@gulshanDevelopmentValidationDeep2016a haben ein CNN basierend auf dem Inception-V3 Modell entwickelt, welches in zwei Validierungsdatensätzen mit 9963 bzw. 1748 Bildern getestet wurde. Bei dem für hohe Spezifität gewählten Schwellenwert erreichte der Algorithmus Sensitivitäten von 90,3 % und 87,0 % sowie Spezifitäten von 98,1 % und 98,5 % bei der Erkennung von behandlungsbedürftiger diabetischer Retinopathie, definiert als moderate oder schwerere diabetische Retinopathie oder behandlungsbedürftiges Makulaödem, basierend auf der Mehrheitsentscheidung eines Panels von mindestens sieben US-zertifizierten Augenärzten. Bei dem für hohe Sensitivität gewählten Schwellenwert lag die Sensitivität bei 97,5 % und 96,1 % und die Spezifität bei 93,4 % und 93,9 %.
 
-#cite(<abramoffPivotalTrialAutonomous2018>, form: "author")@abramoffPivotalTrialAutonomous2018 haben ebenfalls ein CNN in Kombination mit einem multiskalaren Featurebank-Detektor namens IDx-DR entwickelt. Dieser wurde von der Food and Drug Administration (FDA) in den USA für die klinische Praxis zugelassen. Das System wurde in zehn hausärztlichen Praxen an insgesamt 900 Personen getestet und erzielte dabei eine Sensitivität von 87,2 % und eine Spezifität von 90,7 %. Zudem wurde evaluiert, dass 96,7 % der Untersuchungen als analysierbar bewertet wurden, sodass das System eine Vorhersage treffen konnte.
+#cite(<abramoffPivotalTrialAutonomous2018>, form: "author")@abramoffPivotalTrialAutonomous2018 haben ebenfalls ein CNN in Kombination mit einem multiskalaren Featurebank-Detektor namens IDx-DR entwickelt. Dieser wurde von der Food and Drug Administration (FDA) in den USA für die klinische Praxis zugelassen. Das System wurde in zehn hausärztlichen Praxen an insgesamt 900 Personen getestet und erzielte dabei eine Sensitivität von 87,2 % und eine Spezifität von 90,7 %. Zudem wurde evaluiert, dass 96,7 % der Untersuchungen als analysierbar bewertet wurden, sodass das System diese auswerten konnte und eine Vorhersage treffen konnte.
 
 = Methodik
 
@@ -42,7 +42,7 @@ Im Folgenden wird die angewandte Methodik genauer beschrieben, wodurch die Ergeb
 
 == Performanz der Modelle
 
-Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensatz #cite(<messidor21>), #cite(<messidor22>) herangezogen. Die vorliegende Untersuchung umfasst insgesamt 874 diagnostische Verfahren zur Erfassung einer diabetischen Retinopathie (DR), wobei jeweils zwei Fundusfotografien pro Auge berücksichtigt werden. Diese stammen aus dem Zeitraum vom 1. Januar 2005 bis zum 31. Dezember 2010, bestehen aus Aufnahmen mit einer Farb-3CCD-Videokamera (Canon Europe BV) und wurden mit einer Topcon TRC NW6 nicht-mydriatischen Funduskamera (Topcon USA, Inc.) mit einem 45°-Sichtfeld und der Fovea als Mittelpunkt erstellt. 186 dieser Untersuchungen stammen aus dem Hôpital Lariboisière in Paris (Frankreich), 489 aus dem Brest University Hospital in Brest (Frankreich) und 199 aus dem Saint-Étienne University Hospital in Saint-Étienne (Frankreich). Die Bilder wurden in drei unterschiedlichen Auflösungen, nämlich 1440 x 960, 2240 x 1488 oder 2304 x 1536 Pixel, aufgenommen. Da sie nicht annotiert sind, ist eine manuelle Kategorisierung und Markierung des betroffenen Gewebes durch Augenfachärzte erforderlich. Ein weiteres wichtiges Kriterium ist die Akzeptanz eines solchen Systems unter den Endnutzern. Akzeptanz schreibt, dass eine effiziente Nutzung nur möglich ist, solange diese auch von den Anwendern akzeptiert wird. In diesen Experteninterviews soll nun ermittelt werden, wie eine solche Akzeptanz bei den Ärzten erreicht und sichergestellt werden kann.
+Im Rahmen des Trainings des Computer-Vision-Modells wurde der Messidor-2-Datensatz #cite(<messidor21>), #cite(<messidor22>) herangezogen. Die vorliegende Untersuchung umfasst insgesamt 874 diagnostische Verfahren zur Erfassung einer diabetischen Retinopathie (DR), wobei jeweils zwei Fundusfotografien pro Auge berücksichtigt werden. Diese stammen aus dem Zeitraum vom 1. Januar 2005 bis zum 31. Dezember 2010, bestehen aus Aufnahmen mit einer Farb-3CCD-Videokamera (Canon Europe BV) und wurden mit einer Topcon TRC NW6 nicht-mydriatischen Funduskamera (Topcon USA, Inc.) mit einem 45°-Sichtfeld und der Fovea als Mittelpunkt erstellt. 186 dieser Untersuchungen stammen aus dem Hôpital Lariboisière in Paris (Frankreich), 489 aus dem Brest University Hospital in Brest (Frankreich) und 199 aus dem Saint-Étienne University Hospital in Saint-Étienne (Frankreich). Die Bilder wurden in drei unterschiedlichen Auflösungen (1440 x 960, 2240 x 1488 oder 2304 x 1536 Pixel) aufgenommen. Da sie nicht annotiert sind, ist eine manuelle Kategorisierung und Markierung des betroffenen Gewebes durch Augenfachärzte erforderlich.
 
 #figure(
   placement: top,
@@ -127,7 +127,7 @@ Die Interviews werden aufgezeichnet, transkribiert und einer qualitativen Inhalt
 
 == Ethische Rahmenbedingungen
 
-Die Studie erfolgt unter Beachtung datenschutzrechtlicher und ethischer Anforderungen. Vor Beginn der Erhebung wird ein positives Votum der zuständigen Ethikkommission eingeholt. Alle Teilnehmenden der Interviews geben eine informierte Einwilligung zur anonymisierten Auswertung und Veröffentlichung der Ergebnisse.
+Die Studie erfolgt unter Beachtung datenschutzrechtlicher und ethischer Anforderungen. Vor Beginn der Erhebung wurde ein positives Votum der zuständigen Ethikkommission eingeholt. Alle Teilnehmenden der Interviews geben eine informierte Einwilligung zur anonymisierten Auswertung und Veröffentlichung der Ergebnisse.
 
 = Ergebnisse
 
@@ -145,7 +145,7 @@ AUC (ROC): 0,89
 
 Die Analyse der segmentierten Fundusbilder ergab zudem eine durchschnittliche Intersection over Union (IoU) von 0,78 bei der Lokalisation von Mikroaneurysmen und Exsudaten, was auf eine präzise Detektion pathologischer Bildregionen hinweist.
 
-Trotz der hohen Sensitivität wurden folgende Einschränkungen beobachtet: Fehlklassifikationen aufgrund unzureichender Bildqualität, insbesondere bei überbelichteten oder unscharfen Fundusaufnahmen. Es bestehen Unwägbarkeiten bei subtilen Frühstadien, was auf Defizite im Preprocessing und eine unzureichende Datenvielfalt schließen lässt. Es ist festzustellen, dass das Modell zwar korrekt klassifiziert, jedoch keine weiterführenden Informationen bezüglich der Schwere oder Therapiebedürftigkeit bereitstellt. Dies ist auf eine mangelnde Kontextualisierung der klinischen Relevanz zurückzuführen. Die Black Box-Problematik, die sich aus der fehlenden Nachvollziehbarkeit einzelner Entscheidungen ergibt, erschwert die Integration in ärztliche Entscheidungsprozesse.
+Trotz der hohen Sensitivität wurden folgende Einschränkungen beobachtet: Fehlklassifikationen aufgrund unzureichender Bildqualität, insbesondere bei überbelichteten oder unscharfen Fundusaufnahmen. Es bestehen hohe Varianzen bei der Klassifikation von subtilen Frühstadien, was auf Defizite im Preprocessing und eine unzureichende Datenvielfalt schließen lässt. Es ist festzustellen, dass das Modell zwar korrekt klassifiziert, jedoch keine weiterführenden Informationen bezüglich der Schwere oder Therapiebedürftigkeit bereitstellt. Dies ist auf eine mangelnde Kontextualisierung der klinischen Relevanz zurückzuführen. Die Black Box-Problematik, die sich aus der fehlenden Nachvollziehbarkeit einzelner Entscheidungen ergibt, erschwert die Integration in ärztliche Entscheidungsprozesse.
 
 Diese Limitierungen wirken sich unmittelbar auf die Interaktion mit medizinischem Fachpersonal aus, da fehlende Transparenz und erklärbare Entscheidungslogik das Vertrauen in das System reduzieren.
 
@@ -156,7 +156,7 @@ Insgesamt wurden zehn Interviews mit Fachärzt:innen (Ophthalmologie und Diabeto
 === Usability
 
 Aufgabenangemessenheit:
-Das System wurde als hilfreich zur Erstbewertung von Fundusbildern eingestuft. Einige Befragte bemängelten jedoch das Fehlen klinischer Kontextinformationen zur Priorisierung oder Verlaufskontrolle, was die Weiterverwendung einschränkt.
+Das System wurde als hilfreich zur Erstbewertung von Fundusbildern eingestuft. Einige Befragte bemängelten jedoch das Fehlen klinischer Kontextinformationen zur Entscheidungsbildung oder Verlaufskontrolle, was die Weiterverwendung einschränkt.
 
 Selbstbeschreibungsfähigkeit:
 Die Bedienoberfläche wurde als grundlegend verständlich beschrieben, allerdings fehlte in unklaren Fällen unterstützendes Feedback. Eine intuitivere Darstellung der Entscheidungslogik sowie visuelle Rückmeldungen bei unklaren Eingaben wurden mehrfach gefordert.
@@ -174,7 +174,7 @@ Individualisierbarkeit:
 Das System bietet bislang keine Möglichkeit zur Anpassung an unterschiedliche Erfahrungsstufen oder Fachbereiche. Eine modulare Darstellung bzw. die Anpassung von Komplexitätsgraden wurde empfohlen.
 
 Lernförderlichkeit:
-Obwohl das System nach kurzer Einweisung bedienbar ist, fehlten interaktive Trainingsmodi oder Tutorials zur gezielten Einarbeitung. Eine stärkere didaktische Einbettung wurde für Nachwuchskräfte empfohlen.
+Obwohl das System nach kurzer Einweisung bedienbar ist, fehlten interaktive Trainingsmodi oder Tutorials zur gezielten Einarbeitung. Eine stärkere didaktische Einbettung wurde für Nachwuchskräfte gewünscht.
 
 === Akzeptanz
 
@@ -209,6 +209,9 @@ Auch die fehlende Integration in bestehende IT-Systeme (KIS/PACS) reduziert aktu
 
 == Verbesserungsvorschläge
 
+Black-Box-Problematik umgehen:
+
+
 Datengrundlage erweitern:
 Eine Diversifizierung der Trainings- und Testdaten durch Einbezug weiterer, multizentrischer Datensätze könnte die Robustheit und Generalisierbarkeit des Modells verbessern.
 
@@ -216,7 +219,7 @@ Optimierung der Schwellenwertanpassung:
 Die Einführung eines dynamisch anpassbaren Schwellenwertsystems, etwa abhängig vom Einsatzkontext (z.B. Screening vs. Diagnostik), könnte das Gleichgewicht zwischen Sensitivität und Spezifität verbessern.
 
 Integration in klinische Systeme:
-Für die praktische Anwendung ist eine direkte Anbindung an Krankenhausinformationssysteme (KIS) und Bildarchivierungs- und Kommunikationssysteme (PACS) essenziell. Eine modulare API-Schnittstelle könnte hier Abhilfe schaffen.
+Für die praktische Anwendung ist eine direkte Anbindung an Krankenhausinformationssysteme (KIS) und Bildarchivierungs- und Kommunikationssysteme (PACS) essenziell. Eine modulare API-Schnittstelle könnte hier Abhilfe schaffen. Dafür würde auch eine Integration an bereits standardisierte Nachrichtenformate, wie beispielsweise FHIR sinnvoll sein.
 
 Rechtliche Rahmenbedingungen klären:
 Es sollten klare Verantwortlichkeitsstrukturen für KI-gestützte Diagnostik etabliert werden. Dies schließt sowohl regulatorische Rahmenbedingungen als auch haftungsrechtliche Aspekte mit ein.
