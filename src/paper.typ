@@ -234,3 +234,7 @@ Zukünftige Studien sollten die Integration und Wirksamkeit des Modells in reale
 = Fazit
 
 Zusammenfassend zeigen die Ergebnisse, dass DL-basierte CV-Modelle zur DR-Erkennung eine hohe diagnostische Güte erreichen, jedoch in ihrer Akzeptanz und Usability noch Optimierungspotenzial besteht. Für eine flächendeckende klinische Integration bedarf es technischer Nachbesserung, transparenterer Modellentscheidungen und umfassender Schulungsmaßnahmen. Zukünftige Arbeiten sollten den Fokus auf multimodale Datenintegration und adaptive Nutzeroberflächen legen.
+
+= Anmerkungen
+
+Die Texte wurden mithilfe des KI-Tools DeepL Write (https://www.deepl.com/de/write) umformuliert, dabei wurde keine generativen KI-Modelle genutzt.
